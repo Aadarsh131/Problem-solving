@@ -1,5 +1,7 @@
 [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/)
 
+If we rotate by length of the whole array times we get back the original array.
+Hence, `K = K % n` (n = length of arr)
 ## Bruteforce
 > Time complexity: $O(n)$  
 > Space complexity: $O(n)$
