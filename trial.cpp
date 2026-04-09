@@ -1,31 +1,19 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include <climits>
+#include<climits>
 using namespace std;
 
-int fact(int n){
-    if(n <= 1) return 1;
-    //n! = n * (n-1)!
-    return n*fact(n-1);
+int reverse(int x) {
+    int rev = 0;
+    while (x != 0) {
+        int pop = x % 10;
+        x /= 10;
+        if (rev > INT_MAX/10 || (rev == INT_MAX / 10 && pop > 7)) return 0;
+        if (rev < INT_MIN/10 || (rev == INT_MIN / 10 && pop < -8)) return 0;
+        rev = rev * 10 + pop;
+    }
+    return rev; 
 }
-
-int power(int x, int n){
-    if(n==0) return 1;
-    //x^n = x^n-1 * x
-    return x * power(x, n-1);
-}
-
-void printFrom1toN(int n){
-    if(n == 0 ) return; 
-    printFrom1toN(n-1);
-    cout << n;
-}
-
-int main() {
-    int n=5;
-    cout << fact(n) << endl;
-
-    int x=4, m=3;
-    cout << power(x, m) << endl;
-
-    int o=5;
-    printFrom1toN(5);
+int main(){
+    cout << reverse(-123) << endl;
 }
